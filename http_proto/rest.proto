@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package http_proto;
+
+import "annotations.proto";
+
+message StringMessage {
+    string key = 1;
+    string value = 2;
+}
+
+service RestService {
+    rpc Get (StringMessage) returns (StringMessage) {
+        option (http_proto.http) = {
+            get: "/get/{value}"
+        };
+    }
+    rpc Post (StringMessage) returns (StringMessage) {
+        option (http_proto.http) = {
+            post: "/post"
+            body: "*"
+        };
+    }
+}
