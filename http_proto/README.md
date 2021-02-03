@@ -11,7 +11,8 @@ protoc --go_out=plugins=grpc:./ ./annotations.proto
 ```
 
 generate these two files:
-![pb.go](https://upload-images.jianshu.io/upload_images/2059314-c69bea6cf02027cd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+-rw-r--r--  1 kevin  staff   2.4K Feb  3 14:19 annotations.pb.go
+-rw-r--r--  1 kevin  staff    20K Feb  3 14:19 http.pb.go
 
 continue compiling **rest.proto**:
 
@@ -24,7 +25,8 @@ protoc -I/usr/local/include -I. \
 ```
 
 generate these two files:
-![pb.go](https://upload-images.jianshu.io/upload_images/2059314-e6d37955d9aca592.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+-rw-r--r--  1 kevin  staff   7.4K Feb  3 14:46 rest.pb.go
+-rw-r--r--  1 kevin  staff    10K Feb  3 14:46 rest.pb.gw.go
 
 # 👋👋👋
 Proto pre work is finished
