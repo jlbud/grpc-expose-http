@@ -25,6 +25,69 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
+type ReqRest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Key   string `protobuf:"bytes,1,opt,name=key,proto3" json:"key,omitempty"`
+	Value string `protobuf:"bytes,2,opt,name=value,proto3" json:"value,omitempty"`
+	China string `protobuf:"bytes,3,opt,name=china,proto3" json:"china,omitempty"`
+}
+
+func (x *ReqRest) Reset() {
+	*x = ReqRest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_rest_proto_msgTypes[0]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ReqRest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ReqRest) ProtoMessage() {}
+
+func (x *ReqRest) ProtoReflect() protoreflect.Message {
+	mi := &file_rest_proto_msgTypes[0]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ReqRest.ProtoReflect.Descriptor instead.
+func (*ReqRest) Descriptor() ([]byte, []int) {
+	return file_rest_proto_rawDescGZIP(), []int{0}
+}
+
+func (x *ReqRest) GetKey() string {
+	if x != nil {
+		return x.Key
+	}
+	return ""
+}
+
+func (x *ReqRest) GetValue() string {
+	if x != nil {
+		return x.Value
+	}
+	return ""
+}
+
+func (x *ReqRest) GetChina() string {
+	if x != nil {
+		return x.China
+	}
+	return ""
+}
+
 type StringMessage struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -38,7 +101,7 @@ type StringMessage struct {
 func (x *StringMessage) Reset() {
 	*x = StringMessage{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_rest_proto_msgTypes[0]
+		mi := &file_rest_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -51,7 +114,7 @@ func (x *StringMessage) String() string {
 func (*StringMessage) ProtoMessage() {}
 
 func (x *StringMessage) ProtoReflect() protoreflect.Message {
-	mi := &file_rest_proto_msgTypes[0]
+	mi := &file_rest_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -64,7 +127,7 @@ func (x *StringMessage) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use StringMessage.ProtoReflect.Descriptor instead.
 func (*StringMessage) Descriptor() ([]byte, []int) {
-	return file_rest_proto_rawDescGZIP(), []int{0}
+	return file_rest_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *StringMessage) GetKey() string {
@@ -88,29 +151,107 @@ func (x *StringMessage) GetChina() string {
 	return ""
 }
 
+// Request message for CreateShelf method.
+type CreateShelfRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// A unique shelf id.
+	ShelfId int64 `protobuf:"varint,1,opt,name=shelf_id,json=shelfId,proto3" json:"shelf_id,omitempty"`
+	// A theme of the shelf (fiction, poetry, etc).
+	ShelfTheme string `protobuf:"bytes,2,opt,name=shelf_theme,json=shelfTheme,proto3" json:"shelf_theme,omitempty"`
+	// The size of the shelf
+	ShelfSize int64 `protobuf:"varint,3,opt,name=shelf_size,json=shelfSize,proto3" json:"shelf_size,omitempty"`
+}
+
+func (x *CreateShelfRequest) Reset() {
+	*x = CreateShelfRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_rest_proto_msgTypes[2]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *CreateShelfRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateShelfRequest) ProtoMessage() {}
+
+func (x *CreateShelfRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_rest_proto_msgTypes[2]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateShelfRequest.ProtoReflect.Descriptor instead.
+func (*CreateShelfRequest) Descriptor() ([]byte, []int) {
+	return file_rest_proto_rawDescGZIP(), []int{2}
+}
+
+func (x *CreateShelfRequest) GetShelfId() int64 {
+	if x != nil {
+		return x.ShelfId
+	}
+	return 0
+}
+
+func (x *CreateShelfRequest) GetShelfTheme() string {
+	if x != nil {
+		return x.ShelfTheme
+	}
+	return ""
+}
+
+func (x *CreateShelfRequest) GetShelfSize() int64 {
+	if x != nil {
+		return x.ShelfSize
+	}
+	return 0
+}
+
 var File_rest_proto protoreflect.FileDescriptor
 
 var file_rest_proto_rawDesc = []byte{
 	0x0a, 0x0a, 0x72, 0x65, 0x73, 0x74, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x12, 0x05, 0x70, 0x72,
 	0x6f, 0x74, 0x6f, 0x1a, 0x1c, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x70, 0x69, 0x2f,
 	0x61, 0x6e, 0x6e, 0x6f, 0x74, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x2e, 0x70, 0x72, 0x6f, 0x74,
-	0x6f, 0x22, 0x4d, 0x0a, 0x0d, 0x53, 0x74, 0x72, 0x69, 0x6e, 0x67, 0x4d, 0x65, 0x73, 0x73, 0x61,
-	0x67, 0x65, 0x12, 0x10, 0x0a, 0x03, 0x6b, 0x65, 0x79, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52,
-	0x03, 0x6b, 0x65, 0x79, 0x12, 0x14, 0x0a, 0x05, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x18, 0x02, 0x20,
-	0x01, 0x28, 0x09, 0x52, 0x05, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x12, 0x14, 0x0a, 0x05, 0x63, 0x68,
-	0x69, 0x6e, 0x61, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x63, 0x68, 0x69, 0x6e, 0x61,
-	0x32, 0x9c, 0x01, 0x0a, 0x0b, 0x52, 0x65, 0x73, 0x74, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65,
-	0x12, 0x47, 0x0a, 0x03, 0x47, 0x65, 0x74, 0x12, 0x14, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2e,
-	0x53, 0x74, 0x72, 0x69, 0x6e, 0x67, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x1a, 0x14, 0x2e,
-	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2e, 0x53, 0x74, 0x72, 0x69, 0x6e, 0x67, 0x4d, 0x65, 0x73, 0x73,
-	0x61, 0x67, 0x65, 0x22, 0x14, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x0e, 0x12, 0x0c, 0x2f, 0x67, 0x65,
-	0x74, 0x2f, 0x7b, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x7d, 0x12, 0x44, 0x0a, 0x04, 0x50, 0x6f, 0x73,
-	0x74, 0x12, 0x14, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2e, 0x53, 0x74, 0x72, 0x69, 0x6e, 0x67,
-	0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x1a, 0x14, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2e,
-	0x53, 0x74, 0x72, 0x69, 0x6e, 0x67, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x22, 0x10, 0x82,
-	0xd3, 0xe4, 0x93, 0x02, 0x0a, 0x22, 0x05, 0x2f, 0x70, 0x6f, 0x73, 0x74, 0x3a, 0x01, 0x2a, 0x42,
-	0x13, 0x5a, 0x11, 0x65, 0x78, 0x70, 0x6f, 0x73, 0x65, 0x2d, 0x68, 0x74, 0x74, 0x70, 0x2f, 0x70,
-	0x72, 0x6f, 0x74, 0x6f, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x6f, 0x22, 0x47, 0x0a, 0x07, 0x52, 0x65, 0x71, 0x52, 0x65, 0x73, 0x74, 0x12, 0x10, 0x0a, 0x03,
+	0x6b, 0x65, 0x79, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x03, 0x6b, 0x65, 0x79, 0x12, 0x14,
+	0x0a, 0x05, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x76,
+	0x61, 0x6c, 0x75, 0x65, 0x12, 0x14, 0x0a, 0x05, 0x63, 0x68, 0x69, 0x6e, 0x61, 0x18, 0x03, 0x20,
+	0x01, 0x28, 0x09, 0x52, 0x05, 0x63, 0x68, 0x69, 0x6e, 0x61, 0x22, 0x4d, 0x0a, 0x0d, 0x53, 0x74,
+	0x72, 0x69, 0x6e, 0x67, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x12, 0x10, 0x0a, 0x03, 0x6b,
+	0x65, 0x79, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x03, 0x6b, 0x65, 0x79, 0x12, 0x14, 0x0a,
+	0x05, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x76, 0x61,
+	0x6c, 0x75, 0x65, 0x12, 0x14, 0x0a, 0x05, 0x63, 0x68, 0x69, 0x6e, 0x61, 0x18, 0x03, 0x20, 0x01,
+	0x28, 0x09, 0x52, 0x05, 0x63, 0x68, 0x69, 0x6e, 0x61, 0x22, 0x6f, 0x0a, 0x12, 0x43, 0x72, 0x65,
+	0x61, 0x74, 0x65, 0x53, 0x68, 0x65, 0x6c, 0x66, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12,
+	0x19, 0x0a, 0x08, 0x73, 0x68, 0x65, 0x6c, 0x66, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28,
+	0x03, 0x52, 0x07, 0x73, 0x68, 0x65, 0x6c, 0x66, 0x49, 0x64, 0x12, 0x1f, 0x0a, 0x0b, 0x73, 0x68,
+	0x65, 0x6c, 0x66, 0x5f, 0x74, 0x68, 0x65, 0x6d, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52,
+	0x0a, 0x73, 0x68, 0x65, 0x6c, 0x66, 0x54, 0x68, 0x65, 0x6d, 0x65, 0x12, 0x1d, 0x0a, 0x0a, 0x73,
+	0x68, 0x65, 0x6c, 0x66, 0x5f, 0x73, 0x69, 0x7a, 0x65, 0x18, 0x03, 0x20, 0x01, 0x28, 0x03, 0x52,
+	0x09, 0x73, 0x68, 0x65, 0x6c, 0x66, 0x53, 0x69, 0x7a, 0x65, 0x32, 0x96, 0x01, 0x0a, 0x0b, 0x52,
+	0x65, 0x73, 0x74, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x12, 0x41, 0x0a, 0x03, 0x47, 0x65,
+	0x74, 0x12, 0x0e, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2e, 0x52, 0x65, 0x71, 0x52, 0x65, 0x73,
+	0x74, 0x1a, 0x14, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2e, 0x53, 0x74, 0x72, 0x69, 0x6e, 0x67,
+	0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x22, 0x14, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x0e, 0x12,
+	0x0c, 0x2f, 0x67, 0x65, 0x74, 0x2f, 0x7b, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x7d, 0x12, 0x44, 0x0a,
+	0x04, 0x50, 0x6f, 0x73, 0x74, 0x12, 0x0e, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2e, 0x52, 0x65,
+	0x71, 0x52, 0x65, 0x73, 0x74, 0x1a, 0x14, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2e, 0x53, 0x74,
+	0x72, 0x69, 0x6e, 0x67, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x22, 0x16, 0x82, 0xd3, 0xe4,
+	0x93, 0x02, 0x10, 0x22, 0x0b, 0x2f, 0x76, 0x31, 0x2f, 0x73, 0x68, 0x65, 0x6c, 0x76, 0x65, 0x73,
+	0x3a, 0x01, 0x2a, 0x42, 0x13, 0x5a, 0x11, 0x65, 0x78, 0x70, 0x6f, 0x73, 0x65, 0x2d, 0x68, 0x74,
+	0x74, 0x70, 0x2f, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -125,15 +266,17 @@ func file_rest_proto_rawDescGZIP() []byte {
 	return file_rest_proto_rawDescData
 }
 
-var file_rest_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
+var file_rest_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
 var file_rest_proto_goTypes = []interface{}{
-	(*StringMessage)(nil), // 0: proto.StringMessage
+	(*ReqRest)(nil),            // 0: proto.ReqRest
+	(*StringMessage)(nil),      // 1: proto.StringMessage
+	(*CreateShelfRequest)(nil), // 2: proto.CreateShelfRequest
 }
 var file_rest_proto_depIdxs = []int32{
-	0, // 0: proto.RestService.Get:input_type -> proto.StringMessage
-	0, // 1: proto.RestService.Post:input_type -> proto.StringMessage
-	0, // 2: proto.RestService.Get:output_type -> proto.StringMessage
-	0, // 3: proto.RestService.Post:output_type -> proto.StringMessage
+	0, // 0: proto.RestService.Get:input_type -> proto.ReqRest
+	0, // 1: proto.RestService.Post:input_type -> proto.ReqRest
+	1, // 2: proto.RestService.Get:output_type -> proto.StringMessage
+	1, // 3: proto.RestService.Post:output_type -> proto.StringMessage
 	2, // [2:4] is the sub-list for method output_type
 	0, // [0:2] is the sub-list for method input_type
 	0, // [0:0] is the sub-list for extension type_name
@@ -148,7 +291,31 @@ func file_rest_proto_init() {
 	}
 	if !protoimpl.UnsafeEnabled {
 		file_rest_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ReqRest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_rest_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*StringMessage); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_rest_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*CreateShelfRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -166,7 +333,7 @@ func file_rest_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_rest_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   1,
+			NumMessages:   3,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
@@ -192,8 +359,8 @@ const _ = grpc.SupportPackageIsVersion6
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
 type RestServiceClient interface {
-	Get(ctx context.Context, in *StringMessage, opts ...grpc.CallOption) (*StringMessage, error)
-	Post(ctx context.Context, in *StringMessage, opts ...grpc.CallOption) (*StringMessage, error)
+	Get(ctx context.Context, in *ReqRest, opts ...grpc.CallOption) (*StringMessage, error)
+	Post(ctx context.Context, in *ReqRest, opts ...grpc.CallOption) (*StringMessage, error)
 }
 
 type restServiceClient struct {
@@ -204,7 +371,7 @@ func NewRestServiceClient(cc grpc.ClientConnInterface) RestServiceClient {
 	return &restServiceClient{cc}
 }
 
-func (c *restServiceClient) Get(ctx context.Context, in *StringMessage, opts ...grpc.CallOption) (*StringMessage, error) {
+func (c *restServiceClient) Get(ctx context.Context, in *ReqRest, opts ...grpc.CallOption) (*StringMessage, error) {
 	out := new(StringMessage)
 	err := c.cc.Invoke(ctx, "/proto.RestService/Get", in, out, opts...)
 	if err != nil {
@@ -213,7 +380,7 @@ func (c *restServiceClient) Get(ctx context.Context, in *StringMessage, opts ...
 	return out, nil
 }
 
-func (c *restServiceClient) Post(ctx context.Context, in *StringMessage, opts ...grpc.CallOption) (*StringMessage, error) {
+func (c *restServiceClient) Post(ctx context.Context, in *ReqRest, opts ...grpc.CallOption) (*StringMessage, error) {
 	out := new(StringMessage)
 	err := c.cc.Invoke(ctx, "/proto.RestService/Post", in, out, opts...)
 	if err != nil {
@@ -224,18 +391,18 @@ func (c *restServiceClient) Post(ctx context.Context, in *StringMessage, opts ..
 
 // RestServiceServer is the server API for RestService service.
 type RestServiceServer interface {
-	Get(context.Context, *StringMessage) (*StringMessage, error)
-	Post(context.Context, *StringMessage) (*StringMessage, error)
+	Get(context.Context, *ReqRest) (*StringMessage, error)
+	Post(context.Context, *ReqRest) (*StringMessage, error)
 }
 
 // UnimplementedRestServiceServer can be embedded to have forward compatible implementations.
 type UnimplementedRestServiceServer struct {
 }
 
-func (*UnimplementedRestServiceServer) Get(context.Context, *StringMessage) (*StringMessage, error) {
+func (*UnimplementedRestServiceServer) Get(context.Context, *ReqRest) (*StringMessage, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Get not implemented")
 }
-func (*UnimplementedRestServiceServer) Post(context.Context, *StringMessage) (*StringMessage, error) {
+func (*UnimplementedRestServiceServer) Post(context.Context, *ReqRest) (*StringMessage, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Post not implemented")
 }
 
@@ -244,7 +411,7 @@ func RegisterRestServiceServer(s *grpc.Server, srv RestServiceServer) {
 }
 
 func _RestService_Get_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(StringMessage)
+	in := new(ReqRest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -256,13 +423,13 @@ func _RestService_Get_Handler(srv interface{}, ctx context.Context, dec func(int
 		FullMethod: "/proto.RestService/Get",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(RestServiceServer).Get(ctx, req.(*StringMessage))
+		return srv.(RestServiceServer).Get(ctx, req.(*ReqRest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _RestService_Post_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(StringMessage)
+	in := new(ReqRest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -274,7 +441,7 @@ func _RestService_Post_Handler(srv interface{}, ctx context.Context, dec func(in
 		FullMethod: "/proto.RestService/Post",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(RestServiceServer).Post(ctx, req.(*StringMessage))
+		return srv.(RestServiceServer).Post(ctx, req.(*ReqRest))
 	}
 	return interceptor(ctx, in, info, handler)
 }

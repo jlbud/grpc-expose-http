@@ -9,11 +9,11 @@ import (
 
 type RestService struct{}
 
-func (r *RestService) Get(ctx context.Context, message *pb.StringMessage) (*pb.StringMessage, error) {
+func (r *RestService) Get(ctx context.Context, message *pb.ReqRest) (*pb.StringMessage, error) {
 	return &pb.StringMessage{Value: "Get=" + message.Value}, nil
 }
 
-func (r *RestService) Post(ctx context.Context, message *pb.StringMessage) (*pb.StringMessage, error) {
+func (r *RestService) Post(ctx context.Context, message *pb.ReqRest) (*pb.StringMessage, error) {
 	return &pb.StringMessage{Value: "Post=" + message.Value}, nil
 }
 

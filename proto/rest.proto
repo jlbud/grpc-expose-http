@@ -4,22 +4,39 @@ package proto;
 option go_package = "expose-http/proto";
 import "google/api/annotations.proto";
 
+message ReqRest {
+  string key = 1;
+  string value = 2;
+  string china = 3;
+}
+
 message StringMessage {
-    string key = 1;
-    string value = 2;
-    string china = 3;
+  string key = 1;
+  string value = 2;
+  string china = 3;
+}
+
+// Request message for CreateShelf method.
+message CreateShelfRequest {
+  // A unique shelf id.
+  int64 shelf_id = 1;
+  // A theme of the shelf (fiction, poetry, etc).
+  string shelf_theme = 2;
+  // The size of the shelf
+  int64 shelf_size = 3;
 }
 
 service RestService {
-    rpc Get (StringMessage) returns (StringMessage) {
-        option (google.api.http) = {
-            get: "/get/{value}"
-        };
-    }
-    rpc Post (StringMessage) returns (StringMessage) {
-        option (google.api.http) = {
-            post: "/post"
-            body: "*"
-        };
-    }
+  rpc Get (ReqRest) returns (StringMessage) {
+    option (google.api.http) = {
+      get: "/get/{value}"
+    };
+  }
+  rpc Post (ReqRest) returns (StringMessage) {
+    //   curl -d '{"key":"Music", "value":"20"}' http://localhost/v1/shelves
+    option (google.api.http) = {
+      post: "/v1/shelves"
+      body: "*"
+    };
+  }
 }

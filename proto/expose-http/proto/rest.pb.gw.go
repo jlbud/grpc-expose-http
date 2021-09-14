@@ -38,7 +38,7 @@ var (
 )
 
 func request_RestService_Get_0(ctx context.Context, marshaler runtime.Marshaler, client RestServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq StringMessage
+	var protoReq ReqRest
 	var metadata runtime.ServerMetadata
 
 	var (
@@ -72,7 +72,7 @@ func request_RestService_Get_0(ctx context.Context, marshaler runtime.Marshaler,
 }
 
 func local_request_RestService_Get_0(ctx context.Context, marshaler runtime.Marshaler, server RestServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq StringMessage
+	var protoReq ReqRest
 	var metadata runtime.ServerMetadata
 
 	var (
@@ -106,7 +106,7 @@ func local_request_RestService_Get_0(ctx context.Context, marshaler runtime.Mars
 }
 
 func request_RestService_Post_0(ctx context.Context, marshaler runtime.Marshaler, client RestServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq StringMessage
+	var protoReq ReqRest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -123,7 +123,7 @@ func request_RestService_Post_0(ctx context.Context, marshaler runtime.Marshaler
 }
 
 func local_request_RestService_Post_0(ctx context.Context, marshaler runtime.Marshaler, server RestServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq StringMessage
+	var protoReq ReqRest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -278,7 +278,7 @@ func RegisterRestServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux
 var (
 	pattern_RestService_Get_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 1, 0, 4, 1, 5, 1}, []string{"get", "value"}, "", runtime.AssumeColonVerbOpt(true)))
 
-	pattern_RestService_Post_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0}, []string{"post"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_RestService_Post_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "shelves"}, "", runtime.AssumeColonVerbOpt(true)))
 )
 
 var (
