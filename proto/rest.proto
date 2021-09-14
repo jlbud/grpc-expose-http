@@ -1,22 +1,23 @@
 syntax = "proto3";
 
-package http_proto;
-
-import "annotations.proto";
+package proto;
+option go_package = "expose-http/proto";
+import "google/api/annotations.proto";
 
 message StringMessage {
     string key = 1;
     string value = 2;
+    string china = 3;
 }
 
 service RestService {
     rpc Get (StringMessage) returns (StringMessage) {
-        option (http_proto.http) = {
+        option (google.api.http) = {
             get: "/get/{value}"
         };
     }
     rpc Post (StringMessage) returns (StringMessage) {
-        option (http_proto.http) = {
+        option (google.api.http) = {
             post: "/post"
             body: "*"
         };

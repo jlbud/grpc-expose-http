@@ -4,8 +4,8 @@ import (
 	"github.com/grpc-ecosystem/grpc-gateway/runtime"
 	"golang.org/x/net/context"
 	"google.golang.org/grpc"
+	pb "grpc-expose-http/proto/expose-http/proto"
 	"log"
-	pb "my.github/grpc-expose-http/http_proto"
 	"net/http"
 )
 
@@ -23,6 +23,5 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
 	http.ListenAndServe(":8080", mux)
 }

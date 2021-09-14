@@ -3,7 +3,7 @@ package main
 import (
 	"context"
 	"google.golang.org/grpc"
-	pb "my.github/grpc-expose-http/http_proto"
+	pb "grpc-expose-http/proto/expose-http/proto"
 	"net"
 )
 
